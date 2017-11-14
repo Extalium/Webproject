@@ -11,14 +11,14 @@
     <title>Business Casual - Start Bootstrap Theme</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="vendor/twbs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../vendor/twbs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom fonts for this template -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
 
     <!-- Custom styles for this template -->
-    <link href="css/business-casual.css" rel="stylesheet">
+    <link href="../css/business-casual.css" rel="stylesheet">
 
   </head>
   <body>
@@ -34,18 +34,18 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav mx-auto">
-            <li class="nav-item active px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="index.php">Home
+            <li class="nav-item px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="../index.php">Home
                 <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="php/personnality.php">Personnality</a>
+              <a class="nav-link text-uppercase text-expanded" href="personnality.php">Personnality</a>
+            </li>
+            <li class="nav-item active px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="Login.php">Login</a>
             </li>
             <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="php/Login.php">Login</a>
-            </li>
-            <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="php/contact.php">Contact</a>
+              <a class="nav-link text-uppercase text-expanded" href="contact.php">Contact</a>
             </li>
           </ul>
         </div>
@@ -54,6 +54,6 @@
   </body>
 </html>
 <?php
-	include("php/accueil.php");
+	include("accueil.php");
 
 ?>
