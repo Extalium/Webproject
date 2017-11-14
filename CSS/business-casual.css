@@ -32,6 +32,10 @@ h1 {
   line-height: 1;
 }
 
+.scroll {
+    overflow-y: scroll;
+}
+
 .text-expanded {
   letter-spacing: 2px;
 }
