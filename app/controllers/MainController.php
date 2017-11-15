@@ -1,7 +1,10 @@
 <?php
 class MainController extends Controller{
 	function render($f3) {
-		$f3->set('name','world');
+		$messages = new Messages($this->db);
+		$msg = $messages->all()[0];
+
+		$f3->set('msg',$msg);
 		$template= new Template;
 		echo $template->render('template.htm');
 	}
