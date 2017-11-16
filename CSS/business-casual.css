@@ -11,6 +11,7 @@ body {
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
+  overflow-y: scroll;
 }
 
 h1, h2, h3, h4, h5, h6, .text-heading {
@@ -33,7 +34,6 @@ h1 {
 }
 
 .scroll {
-    overflow-y: scroll;
 }
 
 .text-expanded {
