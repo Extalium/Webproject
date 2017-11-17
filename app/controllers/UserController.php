@@ -14,14 +14,16 @@ class UserController extends Controller{
 		$the_user = new User($this->db);
 		$the_user->getbyName($id_name);
 		
-		if($the_user->dry())
-		{
+		if($the_user->dry()){
 			$this->f3->reroute('/login');
-		}
-		
+		}	
 		if(password_verify($mdp,$the_user->mdp)){
 			$this->f3->set('SESSION.user', $the_user->id_name);
 			$this->f3->reroute('/');
+
+		if(password_verify($mdp,$the_user->$mdp){
+			$this->f3->set('SESSION.the_user', $the_user->id_name);
+			$this->f3->reroute('/profil');
 		}
 		else{
 			$this->f3->reroute('/login');
