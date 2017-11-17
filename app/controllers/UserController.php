@@ -22,7 +22,7 @@ class UserController extends Controller{
 		
 		if(password_verify($mdp,$the_user->$mdp){
 			$this->f3->set('SESSION.the_user', $the_user->id_name);
-			$this->f3->reroute('/');
+			$this->f3->reroute('/profil');
 		}
 		else{
 			$this->f3->reroute('/login');
