@@ -9,11 +9,11 @@ class UserController extends Controller{
 
 	function authenticate() {
 		/* ---------------TODO------------------*/
-		$id=this->f3->get('POST.id');
+		$id_name=this->f3->get('POST.id_name');
 		$mdp=this->f3->get('POST.mdp');
 		
 		$the_user = new User($this->db);
-		$the_user->getbyName($id);
+		$the_user->getbyName($id_name);
 		
 		if($the_user->dry())
 		{
@@ -21,7 +21,7 @@ class UserController extends Controller{
 		}
 		
 		if(password_verify($mdp,$the_user->$mdp){
-			$this->f3->set('SESSION.the_user', $the_user->id);
+			$this->f3->set('SESSION.the_user', $the_user->id_name);
 			$this->f3->reroute('/');
 		}
 		else{
