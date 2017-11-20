@@ -34,7 +34,7 @@
 				<ul class="navbar-nav mx-auto">
 					<form method="GET">
 						<input type="submit" value="Home" formaction="../index2.php"/>
-						<input type="submit" value="Personality" formaction="personnality.php"/>
+						<input type="submit" value="Personality" formaction="personality.php"/>
 						<input type="submit" value="Login" formaction="login.php"/>
 						<input type="submit" value="Contact" formaction="contact.php"/>
 						<input type="submit" value="Update" formaction="accueil.php"/>
