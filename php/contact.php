@@ -8,7 +8,7 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 
-	<title>Business Casual - Start Bootstrap Theme</title>
+	<title>Kid Profiler</title>
 
 	<!-- Bootstrap core CSS -->
 	<link href="../vendor/twbs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -23,7 +23,6 @@
 <body>
 
 	<div class="tagline-upper text-center text-heading text-shadow text-white mt-5 d-none d-lg-block">Executive Profiler</div>
-	<div class="tagline-lower text-center text-expanded text-shadow text-uppercase text-white mb-5 d-none d-lg-block">3481 Melrose Place | Beverly Hills, CA 90210 | 123.456.7890</div>
 
 	<!-- Navigation -->
 	<nav class="navbar navbar-expand-lg navbar-light bg-faded py-lg-4">
@@ -33,27 +32,20 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav mx-auto">
-					<li class="nav-item px-lg-4">
-						<a class="nav-link text-uppercase text-expanded" href="../index.php">Home</a>
-					</li>
-					<li class="nav-item px-lg-4">
-						<a class="nav-link text-uppercase text-expanded" href="personnality.php">Personnality</a>
-					</li>
-					<li class="nav-item px-lg-4">
-						<a class="nav-link text-uppercase text-expanded" href="Login.php">Login</a>
-					</li>
-					<li class="nav-item active px-lg-4">
-						<a class="nav-link text-uppercase text-expanded" href="contact.php">Contact
-							<span class="sr-only">(current)</span>
-						</a>
-					</li>
+					<form method="GET">
+						<input type="submit" value="Home" formaction="../index2.php"/>
+						<input type="submit" value="Personality" formaction="personnality.php"/>
+						<input type="submit" value="Login" formaction="login.php"/>
+						<input type="submit" value="Contact" formaction="contact.php"/>
+						<input type="submit" value="Update" formaction="accueil.php"/>
+					</form>
 				</ul>
 			</div>
 		</div>
 	</nav>
-	<?php
-		include("accueil.php");
-
-	?>
+	<div>
+		<br></br><br></br><br></br><br></br><br></br>
+	   <h1> bonjour</h1><br></br><h1> bonjour</h1><br></br><h1> bonjour</h1><br></br><h1> bonjour</h1><br></br><h1> bonjour</h1><br></br><h1> bonjour</h1><br></br>
+   </div>
 </body>
 </html>
