@@ -9,6 +9,11 @@ class MainController extends Controller{
 		echo $template->render('template.htm');
 	}
 
+	function home($f3) {
+		$template= new Template;
+		echo $template->render('home.htm');
+	}
+
 	function personnalités($f3) {
 		$template= new Template;
 		echo $template->render('perso.htm');
