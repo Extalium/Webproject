@@ -12,7 +12,7 @@
 
 	<!-- Bootstrap core CSS -->
 	<link href="vendor/twbs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	<link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
 
 	<!-- Custom styles for this template -->
 	<link href="css/business-casual.css" rel="stylesheet">

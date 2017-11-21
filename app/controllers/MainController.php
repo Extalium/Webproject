@@ -14,6 +14,11 @@ class MainController extends Controller{
 		echo $template->render('perso.htm');
 	}
 
+	function personalityForUser($f3) {
+		$template= new Template;
+		echo $template->render('personality.htm');
+	}
+
 	function paramètres($f3) {
 		$template= new Template;
 		echo $template->render('paramètres.htm');
@@ -42,6 +47,11 @@ class MainController extends Controller{
 	function contact($f3) {
 		$template= new Template;
 		echo $template->render('contact.htm');
+	}
+
+	function FreeContact($f3) {
+		$template= new Template;
+		echo $template->render('FreeContact.htm');
 	}
 
 	function réinitialiser($f3) {
