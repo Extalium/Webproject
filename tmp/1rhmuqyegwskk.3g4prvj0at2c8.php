@@ -21,7 +21,7 @@
 </head>
 <body>
 
-	<div class="tagline-upper text-center text-heading text-shadow text-white mt-5 d-none d-lg-block js-scroll-trigger">Executive Profiler</div>
+	<div class="tagline-upper text-center text-heading text-shadow text-white mt-5 d-none d-lg-block">Executive Profiler</div>
 
 	<!-- Navigation -->
 	<nav class="navbar navbar-expand-lg navbar-light bg-faded py-lg-4">
@@ -31,7 +31,7 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav mx-auto">
-					<form method="GET" action="/">
+					<form method="GET">
 						<input type="submit" value="Home" formaction="/"/>
 						<input type="submit" value="Personality" formaction="/personality-free"/>
 						<input type="submit" value="Login" formaction="/login"/>
@@ -41,8 +41,14 @@
 			</div>
 		</div>
 	</nav>
-	<div>
-		<br></br><br></br><br></br>
-	</div>
+	<p>Login page </p>
+	<label for="inputEmail" class="sr-only">Identifiant</label>
+        <input type="text" id="inputEmail" name="username" class="form-control" placeholder="Username" required="" autofocus="">
+        <label for="inputPassword" class="sr-only">Mot de Passe</label>
+        <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required="">
+		<form method="POST">
+        	<button type="submit" class="btn btn-lg btn-primary btn-block" action="">Sign in</button>
+		</form>
+	</form>
 </body>
 </html>

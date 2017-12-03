@@ -3,7 +3,7 @@
 class Messages extends DB\SQL\Mapper{
 
 	public function __construct(DB\SQL $db) {
-		parent::__construct($db,'messages');
+		parent::__construct($db,'membre');
 	}
 
 	public function all() {
