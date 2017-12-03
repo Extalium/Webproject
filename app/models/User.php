@@ -1,10 +1,10 @@
 <?php
 
-class User extends DB/SQL/Mapper
+class User extends DB\SQL\Mapper
 {
   public function __construct(DB\SQL $db)
   {
-    parent:: __construct($db,'the_user');
+    parent:: __construct($db,'membre');
   }
   
   public function all()
@@ -21,7 +21,7 @@ class User extends DB/SQL/Mapper
 
   public function getByName($name)
   {
-    $this->load(array('id_name=?',$name));
+    $this->load(array('login=?',$name));
     return $this->query;
   }
   
@@ -43,5 +43,5 @@ class User extends DB/SQL/Mapper
     $this->load(array('id=?',$id));
     $this->erase();
   }
-  
+ }
   

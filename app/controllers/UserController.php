@@ -9,8 +9,8 @@ class UserController extends Controller{
 
 	function authenticate() 
     {
-        $username = $this->f3->get('POST.username');
-        $password = $this->f3->get('POST.password');
+        $username = $this->f3->get('POST.login');
+        $password = $this->f3->get('POST.pass_md5');
         $user = new User($this->db);
         $user->getByName($username);
         if($user->dry()) {
@@ -18,7 +18,7 @@ class UserController extends Controller{
         }
         if(password_verify($password, $user->password)) {
             $this->f3->set('SESSION.user', $user->username);
-            $this->f3->reroute('/');
+            $this->f3->reroute('/signup');
         } else {
             $this->f3->reroute('/login');
         }
