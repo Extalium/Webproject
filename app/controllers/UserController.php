@@ -18,7 +18,7 @@ class UserController extends Controller{
         }
         if(password_verify($password, $user->password)) {
             $this->f3->set('SESSION.user', $user->username);
-            $this->f3->reroute('/signup');
+            $this->f3->reroute('/home');
         } else {
             $this->f3->reroute('/login');
         }
