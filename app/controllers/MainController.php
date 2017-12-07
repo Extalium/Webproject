@@ -9,19 +9,9 @@ class MainController extends Controller{
 		echo $template->render('template.htm');
 	}
 
-	function home($f3) {
+	function FreeContact($f3) {
 		$template= new Template;
-		echo $template->render('home.htm');
-	}
-
-	function login($f3) {
-		$template= new Template;
-		echo $template->render('login.htm');
-	}
-
-	function personnalités($f3) {
-		$template= new Template;
-		echo $template->render('perso.htm');
+		echo $template->render('FreeContact.htm');
 	}
 
 	function personalityForUser($f3) {
@@ -29,53 +19,18 @@ class MainController extends Controller{
 		echo $template->render('personality.htm');
 	}
 
-	function paramètres($f3) {
-		$template= new Template;
-		echo $template->render('paramètres.htm');
-	}
-
-	function liste($f3) {
-		$template= new Template;
-		echo $template->render('liste.htm');
-	}
-
-	function déconnexion($f3) {
-		$template= new Template;
-		echo $template->render('logout.htm');
-	}
-
-	function profil($f3) {
-		$template= new Template;
-		echo $template->render('profil.htm');
-	}
-
-	function quizz($f3) {
-		$template= new Template;
-		echo $template->render('quizz.htm');
-	}
-
-	function contact($f3) {
-		$template= new Template;
-		echo $template->render('contact.htm');
-	}
-
-	function FreeContact($f3) {
-		$template= new Template;
-		echo $template->render('FreeContact.htm');
-	}
-
-	function réinitialiser($f3) {
-		$template= new Template;
-		echo $template->render('reset_password.htm');
-	}
-
 	function créercompte($f3) {
 		$template= new Template;
 		echo $template->render('signup.htm');
 	}
 
-	function résultat($f3) {
+	function login($f3) {
 		$template= new Template;
-		echo $template->render('result.htm');
+		echo $template->render('login.htm');
+	}
+
+	function reinitialiser($f3) {
+		$template= new Template;
+		echo $template->render('reset_password.htm');
 	}
 }
