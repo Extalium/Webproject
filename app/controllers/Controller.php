@@ -5,9 +5,9 @@ class Controller {
 	protected $f3;
 	protected $db;
 
-	function beforeroute() {
-		echo 'before. ';
-	}
+//	function beforeroute() {
+//		echo 'before. ';
+//	}
 
 	function afterroute() {
 		echo ' .after';
