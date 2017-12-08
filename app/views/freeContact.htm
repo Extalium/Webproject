@@ -41,37 +41,38 @@
 			</div>
 		</div>
 	</nav>
+
+	<!-- Contact -->
 	<section id="contact">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12 text-center">
-					<h2 class="section-heading text-uppercase">Contact Us</h2>
+					<h2 class="section-heading text-uppercase">Nous contacter</h2>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-lg-12">
-					<form id="contactForm" name="sentMessage" novalidate>
+					<form method="GET" action="sendmail">
 						<div class="row">
 							<div class="col-md-6">
 								<div class="form-group">
-									<input class="form-control" id="name" type="text" placeholder="Your Name *" required data-validation-required-message="Please enter your name.">
+									<input class="form-control" id="name" type="text" placeholder="NOM Prénom" required data-validation-required-message="Please enter your name.">
 								</div>
 								<div class="form-group">
-									<input class="form-control" id="email" type="email" placeholder="Your Email *" required data-validation-required-message="Please enter your email address.">
+									<input class="form-control" id="email" type="email" placeholder="Email" required data-validation-required-message="Please enter your email address.">
 								</div>
 								<div class="form-group">
-									<input class="form-control" id="phone" type="tel" placeholder="Your Phone *" required data-validation-required-message="Please enter your phone number.">
+									<input class="form-control" id="phone" type="tel" placeholder="Téléphone" required data-validation-required-message="Please enter your phone number.">
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group">
-									<textarea class="form-control" id="message" placeholder="Your Message *" required data-validation-required-message="Please enter a message."></textarea>
+									<textarea class="form-control" id="message" placeholder="Votre Email" required data-validation-required-message="Please enter a message."></textarea>
 								</div>
 							</div>
 							<div class="clearfix"></div>
 							<div class="col-lg-12 text-center">
-								<div id="success"></div>
-								<button id="sendMessageButton" class="btn btn-primary btn-xl text-uppercase" type="submit">Send Message</button>
+								<button id="sendMessageButton" class="btn btn-primary btn-xl text-uppercase" type="submit">Envoyer</button>
 							</div>
 						</div>
 					</form>

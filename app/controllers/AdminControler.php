@@ -60,4 +60,8 @@ class ProtectController extends Controller {
 		$template= new Template;
 		echo $template->render('personality_admin.htm');
 	}
+
+	function sendEmail($f3) {
+		//mail('caffeinated@example.com', 'Mon Sujet', $message);
+	}
 }
