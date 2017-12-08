@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,7 +14,6 @@
 	<!-- Bootstrap core CSS -->
 	<link href="../../vendor/twbs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-	<!-- Custom styles for this template -->
 	<link href="../../css/business-casual.css" rel="stylesheet">
 	<link href="../../css/agency.min.css" rel="stylesheet">
 
@@ -31,18 +31,31 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav mx-auto">
-					<form method="GET">
-						<input type="submit" value="Home" formaction="/"/>
-						<input type="submit" value="Personality" formaction="/personality-free"/>
-						<input type="submit" value="Login" formaction="/login"/>
-						<input type="submit" value="Contact" formaction="/get-contact"/>
+					<form method="GET" action="/home">
+					  <input type="submit" value="Home"/>
+					</form>
+					<form method="GET" action="/quizz">
+					  <input type="submit" value="Quizz"/>
+					</form>
+					<form method="GET" action="/profil">
+					  <input type="submit" value="Profile"/>
+					</form>
+					<form method="GET" action="/liste_membre">
+					  <input type="submit" value="Members list"/>
+					</form>
+					<form method="GET" action="/personality">
+					  <input type="submit" value="Personality"/>
+					</form>
+					<form method="GET" action="/logout">
+					  <input type="submit" value="Logout"/>
+					</form>
+					<form method="GET" action="/contact">
+					  <input type="submit" value="Contact"/>
 					</form>
 				</ul>
 			</div>
 		</div>
 	</nav>
-	<div>
-		<br></br><br></br><br></br>
-	</div>
+	<p>Bienvenue sur le formulaire de contact </p>
 </body>
 </html>
