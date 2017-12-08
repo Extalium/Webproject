@@ -4,7 +4,7 @@ class User extends DB\SQL\Mapper
 {
   public function __construct(DB\SQL $db)
   {
-    parent:: __construct($db,'membre');
+    parent:: __construct($db,'gens');
   }
   
   public function all()
@@ -21,10 +21,11 @@ class User extends DB\SQL\Mapper
 
   public function getByName($name)
   {
-    $this->load(array('login=?',$name));
+    $this->load(array('username=?',$name));
     return $this->query;
   }
   
+
   public function add()
   {
     $this->copyFrom('POST');

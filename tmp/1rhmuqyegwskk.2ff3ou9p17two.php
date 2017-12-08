@@ -21,7 +21,7 @@
 </head>
 <body>
 
-	<div class="tagline-upper text-center text-heading text-shadow text-white mt-5 d-none d-lg-block">Executive Profiler</div>
+	<div class="tagline-upper text-center text-heading text-shadow text-white mt-5 d-none d-lg-block js-scroll-trigger">Executive Profiler</div>
 
 	<!-- Navigation -->
 	<nav class="navbar navbar-expand-lg navbar-light bg-faded py-lg-4">
@@ -39,16 +39,10 @@
 					</form>
 				</ul>
 			</div>
-
+		</div>
 	</nav>
-	<form method="POST" action="/authenticate">
-	<p>Login page </p>
-	<label for="inputEmail" class="sr-only">Identifiant</label>
-    <input type="text" id="inputEmail" name="username" class="form-control" placeholder="Username" required="" autofocus="">
-    <label for="inputPassword" class="sr-only">Mot de Passe</label>
-    <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required="">
-    	<button type="submit" class="btn btn-lg btn-primary btn-block" action="authenticate">Sign in</button>
-	</form>
+	<div>
+		<br></br><br></br><br></br>
 	</div>
 </body>
 </html>
