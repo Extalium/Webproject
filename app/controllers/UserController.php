@@ -14,15 +14,16 @@ class UserController extends Controller{
 		
         $gens = new User($this->db);
         $gens->getByName($username);
-		echo " PSWD : " . $password;
-		echo " HASH : " . $gens->passw;
+		echo " PSWD : " . $username;
+		echo " HASH : " . $gens->username;
         if($gens->dry()) {
             $this->f3->reroute('/login');
 			//echo "vide";
         }
         if(password_verify($password, $gens->passw)) {
-            $this->f3->set('SESSION.user', $user->username);
-            $this->f3->reroute('/');
+            $this->f3->set('SESSION.gens', $gens->username);
+            //echo $SESSION.gens;
+			$this->f3->reroute('/personality');
 		 // echo "ok";
         } else {
             $this->f3->reroute('/login');

@@ -6,7 +6,7 @@ class ProtectController extends Controller {
 	protected $db;
 
 	function beforeroute() {
-		if($this->f3->get('SESSION.user') === null ) {
+		if($this->f3->get('SESSION.gens') === null ) {
 			$this->f3->reroute('/login');
 			exit;
 		}
