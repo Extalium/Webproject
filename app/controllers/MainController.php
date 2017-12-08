@@ -33,4 +33,9 @@ class MainController extends Controller{
 		$template= new Template;
 		echo $template->render('reset_password.htm');
 	}
+
+	function error($f3) {
+		$template= new Template;
+		echo $template->render('error.htm');
+	}
 }

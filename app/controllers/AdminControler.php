@@ -6,8 +6,8 @@ class ProtectController extends Controller {
 	protected $db;
 
 	function beforeroute() {
-		if($this->f3->get('SESSION.user') === null ) {
-			$this->f3->reroute('/login');
+		if($this->f3->get('SESSION.user') != admin ) {
+			$this->f3->reroute('/error');
 			exit;
 		}
 	}
@@ -31,43 +31,34 @@ class ProtectController extends Controller {
 		$this->db=$db;
 	}
 
-	function home($f3) {
+	function Home($f3) {
 		$template= new Template;
-		echo $template->render('home.htm');
+		echo $template->render('home_admin.htm');
 	}
 
 	function quizz($f3) {
 		$template= new Template;
-		echo $template->render('quizz.htm');
+		echo $template->render('quizz_admin.htm');
 	}
 
-	function contact($f3) {
+	function parametres($f3) {
 		$template= new Template;
-		echo $template->render('contact.htm');
+		echo $template->render('parametres.htm');
 	}
 
 	function profil($f3) {
 		$template= new Template;
-		echo $template->render('profil.htm');
+		echo $template->render('profil_admin.htm');
 	}
 
-	function liste($f3) {
+	function membre($f3) {
 		$template= new Template;
-		echo $template->render('liste.htm');
+		echo $template->render('membre_admin.htm');
 	}
 
 	function personnality($f3) {
 		$template= new Template;
-		echo $template->render('perso.htm');
+		echo $template->render('personality_admin.htm');
 	}
 
-	function résultat($f3) {
-		$template= new Template;
-		echo $template->render('result.htm');
-	}
-
-	function logout($f3) {
-		$template= new Template;
-		echo $template->render('logout.htm');
-	}
 }
