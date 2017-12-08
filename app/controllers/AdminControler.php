@@ -1,6 +1,6 @@
 <?php
 
-class ProtectController extends Controller {
+class AdminController extends Controller {
 
 	protected $f3;
 	protected $db;
@@ -63,5 +63,20 @@ class ProtectController extends Controller {
 
 	function sendEmail($f3) {
 		//mail('caffeinated@example.com', 'Mon Sujet', $message);
+	}
+
+	function dashboard($f3) {
+		$this->f3->set('view','dashboard.htm');
+		$template= new Template;
+		echo $template->render('dashboard.htm');
+	}
+
+	function displayMessages($f3) {
+		$messages = new Messages($this->db);
+
+		$this->f3->set('messages', $messages->all());
+		$this->f3->set('view', 'messages.htm');
+		$template= new Template;
+		echo $template->render('dashboard.htm');
 	}
 }
