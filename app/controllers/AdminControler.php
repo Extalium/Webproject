@@ -60,5 +60,4 @@ class ProtectController extends Controller {
 		$template= new Template;
 		echo $template->render('personality_admin.htm');
 	}
-
 }
