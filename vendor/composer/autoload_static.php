@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInite96df1bc83a05d9d77a4e88c192aebc2
+class ComposerStaticInit7051923f39a1b53dbed4aedf59c867ab
 {
     public static $files = array (
         '45e8c92354af155465588409ef796dbc' => __DIR__ . '/..' . '/bcosca/fatfree/lib/base.php',
