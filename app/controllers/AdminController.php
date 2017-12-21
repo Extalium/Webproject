@@ -6,9 +6,9 @@ class AdminController extends Controller {
 	protected $db;
 
 	function beforeroute() {
-	/*	if($this->f3->get('SESSION.gens.status') != admin ) {
+		if($this->f3->get('SESSION.gens.status') != 'admin' ) {
 			$this->f3->reroute('/error');
-			exit;*/
+			exit;
 		}
 	}
 
