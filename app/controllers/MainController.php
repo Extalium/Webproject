@@ -9,9 +9,9 @@ class MainController extends Controller{
 		echo $template->render('template.htm');
 	}
 
-	function FreeContact($f3) {
+	function freeContact($f3) {
 		$template= new Template;
-		echo $template->render('FreeContact.htm');
+		echo $template->render('freeContact.htm');
 	}
 
 	function personalityForUser($f3) {
@@ -37,5 +37,25 @@ class MainController extends Controller{
 	function error($f3) {
 		$template= new Template;
 		echo $template->render('error.htm');
+	}
+
+	function render1($f3) {
+		$template= new Template;
+		echo $template->render('template1.htm');
+	}
+
+	function freeContact1($f3) {
+		$template= new Template;
+		echo $template->render('freeContact1.htm');
+	}
+
+	function personalityForUser1($f3) {
+		$template= new Template;
+		echo $template->render('personalityForUser1.htm');
+	}
+
+	function login1($f3) {
+		$template= new Template;
+		echo $template->render('login1.htm');
 	}
 }
