@@ -1,4 +1,4 @@
-<?php
+ <?php
 
 class AdminController extends Controller {
 
@@ -6,9 +6,9 @@ class AdminController extends Controller {
 	protected $db;
 
 	function beforeroute() {
-		if($this->f3->get('SESSION.user') != admin ) {
+	/*	if($this->f3->get('SESSION.gens.status') != admin ) {
 			$this->f3->reroute('/error');
-			exit;
+			exit;*/
 		}
 	}
 
@@ -65,7 +65,7 @@ class AdminController extends Controller {
 		//mail('caffeinated@example.com', 'Mon Sujet', $message);
 	}
 
-	function dashboard($f3) {
+	function board($f3) {
 		$this->f3->set('view','dashboard.htm');
 		$template= new Template;
 		echo $template->render('dashboard.htm');
