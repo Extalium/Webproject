@@ -6,10 +6,10 @@ class AdminController extends Controller {
 	protected $db;
 
 	function beforeroute() {
-		if($this->f3->get('SESSION.status') != 'admin' ) {
-			$this->f3->reroute('/error');
+		/*if($this->f3->get('SESSION.status') != 'admin' ) {
+			$this->f3->reroute('/login');
 			exit;
-		}
+		}*/
 	}
 
 	function afterroute() {
@@ -72,10 +72,10 @@ class AdminController extends Controller {
 	}
 
 	function displayListPraticien($f3) {
-		$praticienList = new Membres($this->db);
+		$praticienList = new User($this->db);
 		$this->f3->set('list', $praticienList->all());
 //		$this->f3->set('view', 'messages.htm');
 		$template= new Template;
-		echo $template->render('dashboard.htm');
+		echo $template->render('praticien_list.htm');
 	}
 }
