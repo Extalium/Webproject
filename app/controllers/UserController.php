@@ -23,6 +23,7 @@ class UserController extends Controller{
         }
         if(password_verify($password, $gens->passw)) {
             $this->f3->set('SESSION.gens', $gens->username);
+            $this->f3->set('SESSION.status', $gens->status);
             //echo $SESSION.gens;
 			if($gens->status=="admin") $this->f3->reroute('/home_admin');
             if($gens->status=="praticien") $this->f3->reroute('/home');
