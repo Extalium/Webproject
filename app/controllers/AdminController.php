@@ -78,4 +78,44 @@ class AdminController extends Controller {
 		$template= new Template;
 		echo $template->render('praticien_list.htm');
 	}
+
+	function add() {
+		$template= new Template;
+		echo $template->render('add_praticien.htm');
+	}
+
+	function addPraticien($f3) {
+        $gens = new User($this->db);
+        $passw = $this->f3->get('POST.passw');
+        $passw = password_hash($passw,PASSWORD_DEFAULT);
+        $this->f3->set('POST.passw',$passw);
+        $gens->add();
+        $this->f3->reroute('/praticien_list');
+	}
+
+	function delete() {
+		$template= new Template;
+		echo $template->render('delete_praticien.htm');
+	}
+
+	function deletePraticien($f3) {
+        $gens = new User($this->db);
+        $id = $this->f3->get('POST.id');
+        $gens->delete($id);
+        $this->f3->reroute('/praticien_list');
+	}
+
+	function edit() {
+		$template= new Template;
+		echo $template->render('edit_praticien.htm');
+	}
+
+	function editPraticien($f3) {
+        $gens = new User($this->db);
+        $passw = $this->f3->get('POST.passw');
+        $passw = password_hash($passw,PASSWORD_DEFAULT);
+        $this->f3->set('POST.passw',$passw);
+        $gens->edit($this->f3->get('POST.id'));
+        $this->f3->reroute('/praticien_list');
+	}
 }

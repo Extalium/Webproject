@@ -21,7 +21,6 @@
 
 </head>
 <body>
-
 	<div class="tagline-upper text-center text-heading text-shadow text-white mt-5 d-none d-lg-block js-scroll-trigger">Executive Profiler</div>
 
 
@@ -55,6 +54,5 @@
 			</div>
 		</div>
 	</nav>
-	<p>Voilà les membres </p>
 </body>
 </html>

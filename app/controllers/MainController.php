@@ -58,9 +58,4 @@ class MainController extends Controller{
 		$template= new Template;
 		echo $template->render('login1.htm');
 	}
-
-	function dashboard($f3) {
-		$template=new Template;
-		echo $template->render('dashboard.htm');
-	}
 }

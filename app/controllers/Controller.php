@@ -9,9 +9,9 @@ class Controller {
 //		echo 'before. ';
 //	}
 
-	function afterroute() {
-		echo ' .after';
-	}
+//	function afterroute() {
+//		echo ' .after';
+//	}
 
 	function __construct() {
 		
