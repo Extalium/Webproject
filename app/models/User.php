@@ -15,7 +15,8 @@ class User extends DB\SQL\Mapper
   
   public function returnLastID()
   {
-    $this->get('_id');
+    $this->load();
+    $this->last();
     return $this->query;
   }
 

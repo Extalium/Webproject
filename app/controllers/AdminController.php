@@ -87,15 +87,23 @@ class AdminController extends Controller {
 
 	function addPraticien($f3) {
         $gens = new User($this->db);
+        $post = new User($this->db);
+        $gens->returnLastID();
+        $lastID = $gens->id;
+        $lastID++;
+
+     //   echo($lastID);
         $passw = $this->f3->get('POST.passw');
         $passw = password_hash($passw,PASSWORD_DEFAULT);
         $this->f3->set('POST.passw',$passw);
-        $this->f3->set('lastID', $gens->returnlastID());
-        $template= new Template;
-		echo $template->render('test.htm');
-    //    $this->f3->set('POST.id','$lastId'+1);
-    //   $gens->add();
-    //    $this->f3->reroute('/praticien_list');
+     //   $lastID = $gens->id;
+ //       $lastID = ($gens->id)+1;
+ //       echo $lastID;
+  //      $template= new Template;
+  //		echo $template->render('test.htm');
+        $this->f3->set('POST.id',$lastID);
+        $post->add();
+        $this->f3->reroute('/praticien_list');
 	}
 
 	function delete() {

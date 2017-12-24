@@ -31,7 +31,7 @@ class UserController extends Controller{
             $this->f3->set('SESSION.status', $gens->status);
             $this->f3->set('SESSION.id', $gens->id);
      //       echo $gens->status;
-            echo $this->f3->get('SESSION.status');
+     //       echo $this->f3->get('SESSION.status');
      //       echo $sessions;
             $session->open('var/sessions/','SESSION.id');
       //      $session->read($this->f3->get('SESSION.id'));
