@@ -36,19 +36,37 @@
 			</div>
 		</div>
 	</nav>
-
-	<!-- Contact -->
+<!-- Contact -->
 	<section id="contact">
-		<div class="container">
+		<div class="container3">
+			<div class="row">
+				<div class="col-lg-12 text-center">
+					<h2 class="section-heading text-uppercase">Nous contacter</h2>
+				</div>
+			</div>
+			<div class="row">
 				<div class="col-lg-12">
-					<form method="POST" action="/authenticate">
+					<form method="GET" action="sendmail">
 						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group">
+									<input class="form-control" id="name" type="text" placeholder="NOM Prénom" required data-validation-required-message="Please enter your name.">
+								</div>
+								<div class="form-group">
+									<input class="form-control" id="email" type="email" placeholder="Email" required data-validation-required-message="Please enter your email address.">
+								</div>
+								<div class="form-group">
+									<input class="form-control" id="phone" type="tel" placeholder="Téléphone" required data-validation-required-message="Please enter your phone number.">
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<textarea class="form-control" id="message" placeholder="Votre Email" required data-validation-required-message="Please enter a message."></textarea>
+								</div>
+							</div>
 							<div class="clearfix"></div>
-							<div class="col-md-6 text-center">
-								<input type="text" id="inputEmail" name="username" class="form-control" placeholder="Username"  required data-validation-required-message="Please enter your username.">
-
-								<input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password"  required data-validation-required-message="Please enter your password.">
-								<button type="submit" id="sendMessageButton" class="btn btn-primary btn-xl text-uppercase" type="submit">Sign in</button>
+							<div class="col-lg-12 text-center">
+								<button id="sendMessageButton" class="btn btn-primary btn-xl text-uppercase" type="submit">Envoyer</button>
 							</div>
 						</div>
 					</form>
@@ -56,5 +74,6 @@
 			</div>
 		</div>
 	</section>
+	
 </body>
 </html>

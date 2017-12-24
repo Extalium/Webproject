@@ -51,7 +51,7 @@ class MainController extends Controller{
 
 	function personalityForUser1($f3) {
 		$template= new Template;
-		echo $template->render('personalityForUser1.htm');
+		echo $template->render('personality1.htm');
 	}
 
 	function login1($f3) {

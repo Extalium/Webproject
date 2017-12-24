@@ -13,6 +13,12 @@ class User extends DB\SQL\Mapper
     return $this->query;
   }
   
+  public function returnLastID()
+  {
+    $this->get('_id');
+    return $this->query;
+  }
+
   public function getById($id)
   {
     $this->load(array('id=?',$id));

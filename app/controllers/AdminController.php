@@ -5,11 +5,12 @@ class AdminController extends Controller {
 	protected $f3;
 	protected $db;
 
-	function beforeroute() {
-		/*if($this->f3->get('SESSION.status') != 'admin' ) {
+	function beforeroute($f3) {
+	/*	if($f3->get('SESSION.status') != 'admin' ) {
 			$this->f3->reroute('/login');
 			exit;
 		}*/
+		echo($f3->get('SESSION.status'));
 	}
 
 	function afterroute() {
@@ -43,7 +44,7 @@ class AdminController extends Controller {
 
 	function parametres($f3) {
 		$template= new Template;
-		echo $template->render('parametres.htm');
+		echo $template->render('parametres_admin.htm');
 	}
 
 	function profil($f3) {
@@ -89,8 +90,12 @@ class AdminController extends Controller {
         $passw = $this->f3->get('POST.passw');
         $passw = password_hash($passw,PASSWORD_DEFAULT);
         $this->f3->set('POST.passw',$passw);
-        $gens->add();
-        $this->f3->reroute('/praticien_list');
+        $this->f3->set('lastID', $gens->returnlastID());
+        $template= new Template;
+		echo $template->render('test.htm');
+    //    $this->f3->set('POST.id','$lastId'+1);
+    //   $gens->add();
+    //    $this->f3->reroute('/praticien_list');
 	}
 
 	function delete() {
