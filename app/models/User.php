@@ -38,6 +38,12 @@ class User extends DB\SQL\Mapper
     $this->copyFrom('POST');
     $this->save();
   }
+
+  public function nextLine()
+  {
+    $this->next();
+    $this->query;
+  }
   
   public function edit($id)
   {
