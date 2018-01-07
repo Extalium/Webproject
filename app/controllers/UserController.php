@@ -63,16 +63,16 @@ class UserController extends Controller{
     }
 
     function logout($f3) {
-
-      session_start();
-      $session=array();//on efface toutes les variables de la session
-      session_destroy(); // Puis on détruit la session
-
+      //session_start();
+      $f3->clear('SESSION'); // destroys the user SESSION
+      $f3->clear('COOKIE.foobar'); // removes a cookie
+      $f3->clear('CACHE'); // clears all cache contents
+      //session_destroy();
 
 
 
        $this->f3->reroute('/home');
-    //   $f3->clear('SESSION');
+    //
         //echo $f3->get('SESSION.status');
    //    echo(gettype($session[2]));
       /* echo $session[0];
