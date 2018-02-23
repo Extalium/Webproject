@@ -33,11 +33,6 @@ class MainController extends Controller{
 		echo $template->render('freeContact.htm');
 	}
 
-	function personalityForUser($f3) {
-		$template= new Template;
-		echo $template->render('personality.htm');
-	}
-
 	function créercompte($f3) {
 		$template= new Template;
 		echo $template->render('signup.htm');
@@ -58,26 +53,6 @@ class MainController extends Controller{
 		echo $template->render('error.htm');
 	}
 
-	function render1($f3) {
-		$template= new Template;
-		echo $template->render('template1.htm');
-	}
-
-	function freeContact1($f3) {
-		$template= new Template;
-		echo $template->render('freeContact1.htm');
-	}
-
-	function personalityForUser1($f3) {
-		$template= new Template;
-		echo $template->render('personality1.htm');
-	}
-
-	function login1($f3) {
-		$template= new Template;
-		echo $template->render('login1.htm');
-	}
-
 	function getAnime($f3) {
 		header("Access-Control-Allow-Origin: *");
 		$anime = new Membres($this->db);
@@ -94,9 +69,9 @@ class MainController extends Controller{
 			}
 			$c = 0;
 			array_push($json,$item);
-		}	
+		}
 		$categorie = array('anime' => $json);
-		
+
 
 	//	$arr = array('json' => 'id' = )
 		echo json_encode($categorie,3);
@@ -108,7 +83,7 @@ class MainController extends Controller{
 		header('Access-Control-Allow-Methods: GET, POST, OPTIONS, DELETE');
 		$data = $this->f3->get('PARAMS.id');
 		$tab = array();
-    	$tab = explode("=", $data); 
+    	$tab = explode("=", $data);
     	$id = (int) $tab[1];
 		echo("test");
         $gens = new Membres($this->db);
@@ -134,7 +109,7 @@ class MainController extends Controller{
         if ($id>1) $id--;
 	/*	$data = $this->f3->get('PARAMS.id');
 		$tab = array();
-    	$tab = explode("=", $data); 
+    	$tab = explode("=", $data);
     	$id = (int) $tab[1];*/
 		echo("test");
 		$data = file_get_contents("php://input");
@@ -174,13 +149,13 @@ class MainController extends Controller{
 	//	$data = file_get_contents('/home/hosting/projet/kidsprofiler/test.json');
 		$id = $this->f3->get('PARAMS.id');
 		$tab = array();
-    	$tab = explode("=", $id); 
+    	$tab = explode("=", $id);
     	$id = (int) $tab[1];
 		$json = json_decode($data);
 		//echo $test = $json->id;
 		echo $title = $json->title;
 		echo $author = $json->author;
-		echo $image = $json->image;	
+		echo $image = $json->image;
 		echo $date = $json->date;
 		echo $id;
 		$this->f3->set('POST.username',$title);
@@ -202,4 +177,3 @@ class MainController extends Controller{
    	//	$gens->delete($id);
 	}
 }
-	

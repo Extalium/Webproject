@@ -56,11 +56,6 @@ class ProtectController extends Controller {
 		echo $template->render('liste.htm');
 	}
 
-	function personnality($f3) {
-		$template= new Template;
-		echo $template->render('perso.htm');
-	}
-
 	function résultat($f3) {
 		$template= new Template;
 		echo $template->render('result.htm');
