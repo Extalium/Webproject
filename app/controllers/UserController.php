@@ -71,7 +71,7 @@ class UserController extends Controller{
 
 
 
-       $this->f3->reroute('/home');
+       $this->f3->reroute('/login');
     //
         //echo $f3->get('SESSION.status');
    //    echo(gettype($session[2]));
