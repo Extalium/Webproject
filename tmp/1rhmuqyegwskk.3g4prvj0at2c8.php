@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<include href="header.htm" />
+<?php echo $this->render('header.htm',NULL,get_defined_vars(),0); ?>
 <body>
 
 	<div class="tagline-upper text-center text-heading text-shadow text-white mt-5 d-none d-lg-block">Executive Profiler</div>

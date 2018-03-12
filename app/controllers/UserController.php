@@ -51,12 +51,12 @@ class UserController extends Controller{
           //  $session->open('var/sessions/','SESSION.id');
           //  $session->read($this->f3->get('SESSION'));
             //echo(gettype($session));
-            //echo $SESSION.gens;
-			if($gens->status=="admin") $this->f3->reroute('/home_admin');
-            if($gens->status=="praticien") $this->f3->reroute('/home');
-            else $this->f3->reroute('/personality');
+            echo $gens->status;
+		//    	if($gens->status=="admin") $this->f3->reroute('/home_admin');
+   //       if($gens->status=="praticien") $this->f3->reroute('/home');
+          if($gens->status=="user") $this->f3->reroute('/quizz');
 		 // echo "ok";
-        } else {
+      } else {
             $this->f3->reroute('/login');
 			//echo "not ok"; */
         }
