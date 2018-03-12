@@ -1,2 +1,2 @@
-exclude /tmp
-*.tmp/
+# exclude /tmp
+tmp/
