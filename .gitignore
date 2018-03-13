@@ -1,2 +1,5 @@
 # exclude /tmp
 tmp/
+
+# exclude /var/session je crois que c'est inutile
+var/
