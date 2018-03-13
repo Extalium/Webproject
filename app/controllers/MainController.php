@@ -25,7 +25,7 @@ class MainController extends Controller{
 
 		$f3->set('msg',$msg);*/
 		$template= new Template;
-		echo $template->render('template.htm');
+		echo $template->render('login.htm');
 	}
 
 	function freeContact($f3) {
