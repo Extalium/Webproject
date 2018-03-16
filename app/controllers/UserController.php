@@ -83,11 +83,27 @@ class UserController extends Controller{
 
     function newUser()
     {
+        $id = 1;
+        $gens = new Membres($this->db);
+        $post = new Membres($this->db);
+        $gens->getById($id);
+        while(!$gens->dry()) {
+          $gens->getById($id++);
+        }
+        unset($gens);
+        $id--;
         $name = $this->f3->get('POST.name');
-        $username = $this->f3->get('POST.username');
+        echo $name;
+        $surname = $this->f3->get('POST.surname');
         $age = $this->f3->get('POST.age');
         $gender = $this->f3->get('POST.gender');
-        $gens = new User($this->db);
+        $this->f3->set('POST.username',$name);
+        $this->f3->set('POST.password',$surname);
+        $this->f3->set('POST.email',$age);
+        $this->f3->set('POST.avatar',$gender);
+        $this->f3->set('POST.signup_date',$id);
+        $this->f3->set('POST.id',$id);
+        $post->add();
      //   $gens->getByName($status);
   //  echo " PSWD : " . $password;
   //  echo " HASH : " . $gens->passw;
