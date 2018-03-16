@@ -10,7 +10,7 @@ class ProtectController extends Controller {
 			$this->f3->reroute('/login');
 			exit;
 		}*/
-		echo $SESSION.gens;
+		//echo $SESSION.gens;
 	}
 
 	function afterroute() {
@@ -65,5 +65,10 @@ class ProtectController extends Controller {
 	function logout($f3) {
 		$template= new Template;
 		echo $template->render('logout.htm');
+	}
+
+	function addUser($f3) {
+		$template= new Template;
+		echo $template->render('addUser.htm');
 	}
 }

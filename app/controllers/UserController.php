@@ -53,8 +53,8 @@ class UserController extends Controller{
             //echo(gettype($session));
     //        echo $gens->status;
 		    	if($gens->status=="admin") $this->f3->reroute('/home_admin');
-          if($gens->status=="praticien") $this->f3->reroute('/home');
-          if($gens->status=="user") $this->f3->reroute('/quizz');
+          if($gens->status=="praticien") $this->f3->reroute('/addUser');
+          if($gens->status=="user") $this->f3->reroute('/addUser');
 		 // echo "ok";
       } else {
             $this->f3->reroute('/login');
@@ -79,5 +79,24 @@ class UserController extends Controller{
        $session->destroy($id);
        $session->close();
        unset($f3->{'COOKIE.'.session_name()});*/
+    }
+
+    function newUser()
+    {
+        $name = $this->f3->get('POST.name');
+        $username = $this->f3->get('POST.username');
+        $age = $this->f3->get('POST.age');
+        $gender = $this->f3->get('POST.gender');
+        $gens = new User($this->db);
+     //   $gens->getByName($status);
+  //  echo " PSWD : " . $password;
+  //  echo " HASH : " . $gens->passw;
+    //    $this->f3->set('SESSION', $session);
+    //    $this->f3->set('SESSION.gens', $gens->username);
+    //    $this->f3->set('SESSION.status', $gens->status);
+    //    $this->f3->set('SESSION.id', $gens->id);
+        $this->f3->reroute('/quizz');
+            
+     // echo "ok";
     }
 }
