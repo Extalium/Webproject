@@ -91,7 +91,7 @@
 
             game.load.json('conf', '../data/conf.json');
             game.load.spritesheet('buttonContinue', '../img/BoutonContinuer.png', 150, 80);
-            game.load.image('hand', '../img/Select.png', 200, 215);
+            game.load.image('hand', '../img/Hand.png', 200, 215);
 
             //Images partie 1
             game.load.image('background1', '../img/Choix1/Fond.png');
@@ -114,7 +114,7 @@
 
             //Images partie 3
             game.load.image('background3', '../img/Choix3/Fond.png');
-            //game.load.video('video3', 'Videos/Transition1.webm');
+            game.load.video('video3', 'Videos/Transition1.webm');
 
             //Images partie 4
             game.load.image('background4', '../img/Choix4/Fond.png');
@@ -222,17 +222,6 @@
         var hand;
         var hand2;
 
-        /*var image1;
-        var image2;
-        var image3;
-        var image4;
-        var image5;
-        var image6;
-        var image7;
-        var image8;
-        var image9;
-        var image10;*/
-
         function create() {
 
             game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
@@ -265,63 +254,42 @@
                 if (result[0] == 5) { //Scénario objet 2
 
                     var sky = game.add.sprite(game.world.centerX, game.world.centerY, 'backgroundO2');
-                    sky.anchor.setTo(0.5, 0.5);
 
                     var buttonC = game.add.button(conf.button11.x, conf.button11.y, 'buttonCO2', actionOnClickC);
 					var buttonF = game.add.button(conf.button13.x, conf.button13.y, 'buttonFO2', actionOnClickF);
 					var buttonf = game.add.button(conf.button14.x, conf.button14.y, 'buttonfO2', actionOnClickf);
 					var buttonA = game.add.button(conf.button12.x, conf.button12.y, 'buttonAO2', actionOnClickA);
-
-                    buttonC.input.useHandCursor = true;
-                    buttonF.input.useHandCursor = true;
-                    buttonf.input.useHandCursor = true;
-                    buttonA.input.useHandCursor = true;
-
-                    hand = game.add.sprite(conf.hand.x1, conf.hand.y1, 'hand');
-                    hand.anchor.setTo(0.5, 0.5);
-
-                    var tween = game.add.tween(hand).to({ y: 150 }, 500, 'Linear', true, 0, -1);
-                    tween.yoyo(true, 0);
-
-                    hand2 = game.add.sprite(conf.hand.x2, conf.hand.y2, 'hand');
-                    hand2.anchor.setTo(0.5, 0.5);
-                    hand2.visible = false;
-
-                    var tween2 = game.add.tween(hand2).to({ y: 150 }, 500, 'Linear', true, 0, -1);
-                    tween2.yoyo(true, 0);
-
-                    //image1 = game.add.sprite(conf.objet.x1, conf.objet.y1)
                 }
 
                 else { //Scénario sujet 2
 
                     var sky = game.add.sprite(game.world.centerX, game.world.centerY, 'backgroundS2');
-                    sky.anchor.setTo(0.5, 0.5);
 
                     var buttonC = game.add.button(conf.button11.x, conf.button11.y, 'buttonCS2', actionOnClickC);
 					var buttonF = game.add.button(conf.button13.x, conf.button13.y, 'buttonFS2', actionOnClickF);
 					var buttonf = game.add.button(conf.button14.x, conf.button14.y, 'buttonfS2', actionOnClickf);
 					var buttonA = game.add.button(conf.button12.x, conf.button12.y, 'buttonAS2', actionOnClickA);
+				}
 
-                    buttonC.input.useHandCursor = true;
-                    buttonF.input.useHandCursor = true;
-                    buttonf.input.useHandCursor = true;
-                	buttonA.input.useHandCursor = true;
+				sky.anchor.setTo(0.5, 0.5);
 
-                    hand = game.add.sprite(conf.hand.x1, conf.hand.y1, 'hand');
-                    hand.anchor.setTo(0.5, 0.5);
+				buttonC.input.useHandCursor = true;
+                buttonF.input.useHandCursor = true;
+                buttonf.input.useHandCursor = true;
+            	buttonA.input.useHandCursor = true;
 
-                    var tween = game.add.tween(hand).to({ y: 150 }, 500, 'Linear', true, 0, -1);
-                    tween.yoyo(true, 0);
+                hand = game.add.sprite(conf.hand.x1, conf.hand.y1, 'hand');
+                hand.anchor.setTo(0.5, 0.5);
 
-                    hand2 = game.add.sprite(conf.hand.x2, conf.hand.y2, 'hand');
-                    hand2.anchor.setTo(0.5, 0.5);
-                    hand2.visible = false;
+                var tween = game.add.tween(hand).to({ y: 150 }, 500, 'Linear', true, 0, -1);
+                tween.yoyo(true, 0);
 
-                    var tween2 = game.add.tween(hand2).to({ y: 150 }, 500, 'Linear', true, 0, -1);
-                    tween2.yoyo(true, 0);
+                hand2 = game.add.sprite(conf.hand.x2, conf.hand.y2, 'hand');
+                hand2.anchor.setTo(0.5, 0.5);
+                hand2.visible = false;
 
-                }
+                var tween2 = game.add.tween(hand2).to({ y: 150 }, 500, 'Linear', true, 0, -1);
+                tween2.yoyo(true, 0);
             }
 
             else if (state == 2) { //Transition 1
@@ -339,9 +307,9 @@
                 var buttonContinue = game.add.button(conf.buttonContinue.x, conf.buttonContinue.y, 'buttonContinue', actionOnClickContinue);
                 buttonContinue.input.useHandCursor = true;
 
-                //var video = game.add.video('video3');
-                //var sprite = video.addToWorld(game.world.centerX, game.world.centerY, 0.5, 0.5, 2, 2);
-                //video.play(false);
+                var video = game.add.video('video3');
+                var sprite = video.addToWorld(game.world.centerX, game.world.centerY, 0.5, 0.5, 2, 2);
+                video.play(false);
 
 
 
@@ -365,61 +333,45 @@
                 if (result[3] == 5) { //Scénario objet 2
 
                     var sky = game.add.sprite(game.world.centerX, game.world.centerY, 'backgroundO5');
-                    sky.anchor.setTo(0.5, 0.5);
+
 
                     var buttonC = game.add.button(conf.button11.x, conf.button11.y, 'buttonCO5', actionOnClickC);
 					var buttonF = game.add.button(conf.button13.x, conf.button13.y, 'buttonFO5', actionOnClickF);
 					var buttonf = game.add.button(conf.button14.x, conf.button14.y, 'buttonfO5', actionOnClickf);
 					var buttonA = game.add.button(conf.button12.x, conf.button12.y, 'buttonAO5', actionOnClickA);
-                    buttonC.input.useHandCursor = true;
-                    buttonF.input.useHandCursor = true;
-                    buttonf.input.useHandCursor = true;
-                    buttonA.input.useHandCursor = true;
-
-                    hand = game.add.sprite(conf.hand.x1, conf.hand.y1, 'hand');
-                    hand.anchor.setTo(0.5, 0.5);
-
-                    var tween = game.add.tween(hand).to({ y: 150 }, 500, 'Linear', true, 0, -1);
-                    tween.yoyo(true, 0);
-
-                    hand2 = game.add.sprite(conf.hand.x2, conf.hand.y2, 'hand');
-                    hand2.anchor.setTo(0.5, 0.5);
-                    hand2.visible = false;
-
-                    var tween2 = game.add.tween(hand2).to({ y: 150 }, 500, 'Linear', true, 0, -1);
-                    tween2.yoyo(true, 0);
 
                 }
 
                 else { //Scénario sujet 2
 
                     var sky = game.add.sprite(game.world.centerX, game.world.centerY, 'backgroundS5');
-                    sky.anchor.setTo(0.5, 0.5);
+
 
                     var buttonC = game.add.button(conf.button11.x, conf.button11.y, 'buttonCS5', actionOnClickC);
 					var buttonF = game.add.button(conf.button13.x, conf.button13.y, 'buttonFS5', actionOnClickF);
 					var buttonf = game.add.button(conf.button14.x, conf.button14.y, 'buttonfS5', actionOnClickf);
 					var buttonA = game.add.button(conf.button12.x, conf.button12.y, 'buttonAS5', actionOnClickA);
+				}
 
-                    buttonC.input.useHandCursor = true;
-                    buttonF.input.useHandCursor = true;
-                    buttonf.input.useHandCursor = true;
-                    buttonA.input.useHandCursor = true;
+				sky.anchor.setTo(0.5, 0.5);
 
-                    hand = game.add.sprite(conf.hand.x1, conf.hand.y1, 'hand');
-                    hand.anchor.setTo(0.5, 0.5);
+                buttonC.input.useHandCursor = true;
+                buttonF.input.useHandCursor = true;
+                buttonf.input.useHandCursor = true;
+                buttonA.input.useHandCursor = true;
 
-                    var tween = game.add.tween(hand).to({ y: 150 }, 500, 'Linear', true, 0, -1);
-                    tween.yoyo(true, 0);
+                hand = game.add.sprite(conf.hand.x1, conf.hand.y1, 'hand');
+                hand.anchor.setTo(0.5, 0.5);
 
-                    hand2 = game.add.sprite(conf.hand.x2, conf.hand.y2, 'hand');
-                    hand2.anchor.setTo(0.5, 0.5);
-                    hand2.visible = false;
+                var tween = game.add.tween(hand).to({ y: 150 }, 500, 'Linear', true, 0, -1);
+                tween.yoyo(true, 0);
 
-                    var tween2 = game.add.tween(hand2).to({ y: 150 }, 500, 'Linear', true, 0, -1);
-                    tween2.yoyo(true, 0);
+                hand2 = game.add.sprite(conf.hand.x2, conf.hand.y2, 'hand');
+                hand2.anchor.setTo(0.5, 0.5);
+                hand2.visible = false;
 
-                }
+                var tween2 = game.add.tween(hand2).to({ y: 150 }, 500, 'Linear', true, 0, -1);
+                tween2.yoyo(true, 0);
 
             }
 
@@ -461,62 +413,41 @@
                 if (result[6] == 5) { //Scénario objet 2
 
                     var sky = game.add.sprite(game.world.centerX, game.world.centerY, 'backgroundO8');
-                    sky.anchor.setTo(0.5, 0.5);
 
                     var buttonC = game.add.button(conf.button11.x, conf.button11.y, 'buttonCO8', actionOnClickC);
 					var buttonF = game.add.button(conf.button13.x, conf.button13.y, 'buttonFO8', actionOnClickF);
 					var buttonf = game.add.button(conf.button14.x, conf.button14.y, 'buttonfO8', actionOnClickf);
 					var buttonA = game.add.button(conf.button12.x, conf.button12.y, 'buttonAO8', actionOnClickA);
-
-                    buttonC.input.useHandCursor = true;
-                    buttonF.input.useHandCursor = true;
-                    buttonf.input.useHandCursor = true;
-                    buttonA.input.useHandCursor = true;
-
-                    hand = game.add.sprite(conf.hand.x1, conf.hand.y1, 'hand');
-                    hand.anchor.setTo(0.5, 0.5);
-
-                    var tween = game.add.tween(hand).to({ y: 150 }, 500, 'Linear', true, 0, -1);
-                    tween.yoyo(true, 0);
-
-                    hand2 = game.add.sprite(conf.hand.x2, conf.hand.y2, 'hand');
-                    hand2.anchor.setTo(0.5, 0.5);
-                    hand2.visible = false;
-
-                    var tween2 = game.add.tween(hand2).to({ y: 150 }, 500, 'Linear', true, 0, -1);
-                    tween2.yoyo(true, 0);
-
                 }
 
                 else { //Scénario sujet 2
 
                     var sky = game.add.sprite(game.world.centerX, game.world.centerY, 'backgroundS8');
-                    sky.anchor.setTo(0.5, 0.5);
 
                     var buttonC = game.add.button(conf.button11.x, conf.button11.y, 'buttonCS8', actionOnClickC);
 					var buttonF = game.add.button(conf.button13.x, conf.button13.y, 'buttonFS8', actionOnClickF);
 					var buttonf = game.add.button(conf.button14.x, conf.button14.y, 'buttonfS8', actionOnClickf);
 					var buttonA = game.add.button(conf.button12.x, conf.button12.y, 'buttonAS8', actionOnClickA);
+				}
+				sky.anchor.setTo(0.5, 0.5);
 
-                    buttonC.input.useHandCursor = true;
-                    buttonF.input.useHandCursor = true;
-                    buttonf.input.useHandCursor = true;
-                    buttonA.input.useHandCursor = true;
+                buttonC.input.useHandCursor = true;
+                buttonF.input.useHandCursor = true;
+                buttonf.input.useHandCursor = true;
+                buttonA.input.useHandCursor = true;
 
-                    hand = game.add.sprite(conf.hand.x1, conf.hand.y1, 'hand');
-                    hand.anchor.setTo(0.5, 0.5);
+                hand = game.add.sprite(conf.hand.x1, conf.hand.y1, 'hand');
+                hand.anchor.setTo(0.5, 0.5);
 
-                    var tween = game.add.tween(hand).to({ y: 150 }, 500, 'Linear', true, 0, -1);
-                    tween.yoyo(true, 0);
+                var tween = game.add.tween(hand).to({ y: 150 }, 500, 'Linear', true, 0, -1);
+                tween.yoyo(true, 0);
 
-                    hand2 = game.add.sprite(conf.hand.x2, conf.hand.y2, 'hand');
-                    hand2.anchor.setTo(0.5, 0.5);
-                    hand2.visible = false;
+                hand2 = game.add.sprite(conf.hand.x2, conf.hand.y2, 'hand');
+                hand2.anchor.setTo(0.5, 0.5);
+                hand2.visible = false;
 
-                    var tween2 = game.add.tween(hand2).to({ y: 150 }, 500, 'Linear', true, 0, -1);
-                    tween2.yoyo(true, 0);
-
-                }
+                var tween2 = game.add.tween(hand2).to({ y: 150 }, 500, 'Linear', true, 0, -1);
+                tween2.yoyo(true, 0);
             }
 
             else if (state == 8) { //Transition 3
@@ -558,63 +489,42 @@
                 if (result[9] == 5) { //Scénario objet 2
 
                     var sky = game.add.sprite(game.world.centerX, game.world.centerY, 'backgroundO11');
-                    sky.anchor.setTo(0.5, 0.5);
 
                     var buttonC = game.add.button(conf.button11.x, conf.button11.y, 'buttonCO11', actionOnClickC);
 					var buttonF = game.add.button(conf.button13.x, conf.button13.y, 'buttonFO11', actionOnClickF);
 					var buttonf = game.add.button(conf.button14.x, conf.button14.y, 'buttonfO11', actionOnClickf);
 					var buttonA = game.add.button(conf.button12.x, conf.button12.y, 'buttonAO11', actionOnClickA);
-
-                    buttonC.input.useHandCursor = true;
-                    buttonF.input.useHandCursor = true;
-                    buttonf.input.useHandCursor = true;
-                    buttonA.input.useHandCursor = true;
-
-                    hand = game.add.sprite(conf.hand.x1, conf.hand.y1, 'hand');
-                    hand.anchor.setTo(0.5, 0.5);
-
-                    var tween = game.add.tween(hand).to({ y: 150 }, 500, 'Linear', true, 0, -1);
-                    tween.yoyo(true, 0);
-
-                    hand2 = game.add.sprite(conf.hand.x2, conf.hand.y2, 'hand');
-                    hand2.anchor.setTo(0.5, 0.5);
-                    hand2.visible = false;
-
-                    var tween2 = game.add.tween(hand2).to({ y: 150 }, 500, 'Linear', true, 0, -1);
-                    tween2.yoyo(true, 0);
-
                 }
 
                 else { //Scénario sujet 2
 
                     var sky = game.add.sprite(game.world.centerX, game.world.centerY, 'backgroundS11');
-                    sky.anchor.setTo(0.5, 0.5);
 
                     var buttonC = game.add.button(conf.button11.x, conf.button11.y, 'buttonCS11', actionOnClickC);
 					var buttonF = game.add.button(conf.button13.x, conf.button13.y, 'buttonFS11', actionOnClickF);
 					var buttonf = game.add.button(conf.button14.x, conf.button14.y, 'buttonfS11', actionOnClickf);
 					var buttonA = game.add.button(conf.button12.x, conf.button12.y, 'buttonAS11', actionOnClickA);
+				}
 
-                    buttonC.input.useHandCursor = true;
-                    buttonF.input.useHandCursor = true;
-                    buttonf.input.useHandCursor = true;
-                    buttonA.input.useHandCursor = true;
+				sky.anchor.setTo(0.5, 0.5);
 
-                    hand = game.add.sprite(conf.hand.x1, conf.hand.y1, 'hand');
-                    hand.anchor.setTo(0.5, 0.5);
+                buttonC.input.useHandCursor = true;
+                buttonF.input.useHandCursor = true;
+                buttonf.input.useHandCursor = true;
+                buttonA.input.useHandCursor = true;
 
-                    var tween = game.add.tween(hand).to({ y: 150 }, 500, 'Linear', true, 0, -1);
-                    tween.yoyo(true, 0);
+                hand = game.add.sprite(conf.hand.x1, conf.hand.y1, 'hand');
+                hand.anchor.setTo(0.5, 0.5);
 
-                    hand2 = game.add.sprite(conf.hand.x2, conf.hand.y2, 'hand');
-                    hand2.anchor.setTo(0.5, 0.5);
-                    hand2.visible = false;
+                var tween = game.add.tween(hand).to({ y: 150 }, 500, 'Linear', true, 0, -1);
+                tween.yoyo(true, 0);
 
-                    var tween2 = game.add.tween(hand2).to({ y: 150 }, 500, 'Linear', true, 0, -1);
-                    tween2.yoyo(true, 0);
+                hand2 = game.add.sprite(conf.hand.x2, conf.hand.y2, 'hand');
+                hand2.anchor.setTo(0.5, 0.5);
+                hand2.visible = false;
 
-                }
-
+                var tween2 = game.add.tween(hand2).to({ y: 150 }, 500, 'Linear', true, 0, -1);
+                tween2.yoyo(true, 0);
             }
 
             else if (state == 11) { //Transition 4
@@ -656,63 +566,42 @@
                 if (result[12] == 5) { //Scénario objet 2
 
                     var sky = game.add.sprite(game.world.centerX, game.world.centerY, 'backgroundO14');
-                    sky.anchor.setTo(0.5, 0.5);
 
                     var buttonC = game.add.button(conf.button11.x, conf.button11.y, 'buttonCO14', actionOnClickC);
 					var buttonF = game.add.button(conf.button13.x, conf.button13.y, 'buttonFO14', actionOnClickF);
 					var buttonf = game.add.button(conf.button14.x, conf.button14.y, 'buttonfO14', actionOnClickf);
 					var buttonA = game.add.button(conf.button12.x, conf.button12.y, 'buttonAO14', actionOnClickA);
-
-                    buttonC.input.useHandCursor = true;
-                    buttonF.input.useHandCursor = true;
-                    buttonf.input.useHandCursor = true;
-                    buttonA.input.useHandCursor = true;
-
-                    hand = game.add.sprite(conf.hand.x1, conf.hand.y1, 'hand');
-                    hand.anchor.setTo(0.5, 0.5);
-
-                    var tween = game.add.tween(hand).to({ y: 150 }, 500, 'Linear', true, 0, -1);
-                    tween.yoyo(true, 0);
-
-                    hand2 = game.add.sprite(conf.hand.x2, conf.hand.y2, 'hand');
-                    hand2.anchor.setTo(0.5, 0.5);
-                    hand2.visible = false;
-
-                    var tween2 = game.add.tween(hand2).to({ y: 150 }, 500, 'Linear', true, 0, -1);
-                    tween2.yoyo(true, 0);
-
                 }
 
                 else { //Scénario sujet 2
 
                     var sky = game.add.sprite(game.world.centerX, game.world.centerY, 'backgroundS14');
-                    sky.anchor.setTo(0.5, 0.5);
 
                     var buttonC = game.add.button(conf.button11.x, conf.button11.y, 'buttonCS14', actionOnClickC);
 					var buttonF = game.add.button(conf.button13.x, conf.button13.y, 'buttonFS14', actionOnClickF);
 					var buttonf = game.add.button(conf.button14.x, conf.button14.y, 'buttonfS14', actionOnClickf);
 					var buttonA = game.add.button(conf.button12.x, conf.button12.y, 'buttonAS14', actionOnClickA);
+				}
 
-                    buttonC.input.useHandCursor = true;
-                    buttonF.input.useHandCursor = true;
-                    buttonf.input.useHandCursor = true;
-                    buttonA.input.useHandCursor = true;
+				sky.anchor.setTo(0.5, 0.5);
 
-                    hand = game.add.sprite(conf.hand.x1, conf.hand.y1, 'hand');
-                    hand.anchor.setTo(0.5, 0.5);
+                buttonC.input.useHandCursor = true;
+                buttonF.input.useHandCursor = true;
+                buttonf.input.useHandCursor = true;
+                buttonA.input.useHandCursor = true;
 
-                    var tween = game.add.tween(hand).to({ y: 150 }, 500, 'Linear', true, 0, -1);
-                    tween.yoyo(true, 0);
+                hand = game.add.sprite(conf.hand.x1, conf.hand.y1, 'hand');
+                hand.anchor.setTo(0.5, 0.5);
 
-                    hand2 = game.add.sprite(conf.hand.x2, conf.hand.y2, 'hand');
-                    hand2.anchor.setTo(0.5, 0.5);
-                    hand2.visible = false;
+                var tween = game.add.tween(hand).to({ y: 150 }, 500, 'Linear', true, 0, -1);
+                tween.yoyo(true, 0);
 
-                    var tween2 = game.add.tween(hand2).to({ y: 150 }, 500, 'Linear', true, 0, -1);
-                    tween2.yoyo(true, 0);
+                hand2 = game.add.sprite(conf.hand.x2, conf.hand.y2, 'hand');
+                hand2.anchor.setTo(0.5, 0.5);
+                hand2.visible = false;
 
-                }
-
+                var tween2 = game.add.tween(hand2).to({ y: 150 }, 500, 'Linear', true, 0, -1);
+                tween2.yoyo(true, 0);
             }
 
             else if (state == 14) { //Transition 5
