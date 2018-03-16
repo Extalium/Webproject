@@ -14,7 +14,7 @@ class ProtectController extends Controller {
 	}
 
 	function afterroute() {
-		echo ' .after';
+	//	echo ' .after';
 	}
 
 	function __construct() {

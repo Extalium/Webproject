@@ -91,7 +91,7 @@ class UserController extends Controller{
           $gens->getById($id++);
         }
         unset($gens);
-        $id--;
+//        $id--;
         $name = $this->f3->get('POST.name');
         echo $name;
         $surname = $this->f3->get('POST.surname');
