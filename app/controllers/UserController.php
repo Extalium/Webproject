@@ -91,18 +91,18 @@ class UserController extends Controller{
           $gens->getById($id++);
         }
         unset($gens);
-//        $id--;
-        $name = $this->f3->get('POST.name');
+        $id--;
+        if ($id==0) $id=1;
+  /*      $name = $this->f3->get('POST.name');
         echo $name;
         $surname = $this->f3->get('POST.surname');
         $age = $this->f3->get('POST.age');
-        $gender = $this->f3->get('POST.gender');
-        $this->f3->set('POST.username',$name);
-        $this->f3->set('POST.password',$surname);
-        $this->f3->set('POST.email',$age);
-        $this->f3->set('POST.avatar',$gender);
-        $this->f3->set('POST.signup_date',$id);
-        $this->f3->set('POST.id',$id);
+        $gender = $this->f3->get('POST.gender');*/
+
+    //    $idprac = $this->f3->get("COOKIE.status");
+    //    echo $idprac;
+    //    $this->f3->set('POST.id_praticien', $idprac);
+        $this->f3->set('POST.id', $id);
         $post->add();
      //   $gens->getByName($status);
   //  echo " PSWD : " . $password;
