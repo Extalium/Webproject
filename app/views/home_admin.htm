@@ -40,6 +40,24 @@
 			</div>
 		</nav>
 	</div>
-
+	<section id="contact">
+		<div class="container">
+				<div class="col-lg-12">
+					<form method="POST" action="/newUser">
+						<div class="row">
+							<div class="clearfix"></div>
+							<div class="col-md-6 text-center">
+								<input type="text" id="inputName" name="name" class="form-control" placeholder="Name"  required data-validation-required-message="Please enter the name.">
+								<input type="text" id="inputSurname" name="surname" class="form-control" placeholder="Surname"  required data-validation-required-message="Please enter the surname.">
+								<input type="text" id="inputAge" name="age" class="form-control" placeholder="Age"  required data-validation-required-message="Please enter the age.">
+								<input type="text" id="inputGender" name="gender" class="form-control" placeholder="Gender"  required data-validation-required-message="Please enter the sex.">
+								<button type="submit" id="sendMessageButton" class="btn btn-primary btn-xl text-uppercase" type="submit">Create</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
     </body>
     </html>
